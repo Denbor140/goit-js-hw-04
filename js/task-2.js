@@ -5,11 +5,11 @@ function calcAverageCalories(days) {
   for (const calorie of calories) {
     sumCalories += calorie.calories;
   }
-
-  return sumCalories / 7;
-  // return sumCalories / calories.length - ділитеми на реальну кількість днів в об'єкті
-  // (днів може бути не 7), але якщо - [], буде - NaN.
-  // треба перевірка на if (calorie.length === 0)
+  if (calories.length === 0) {
+    return 0;
+  } else {
+    return sumCalories / days.length;
+  }
 }
 
 console.log(
